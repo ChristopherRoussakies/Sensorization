@@ -2,13 +2,13 @@ clear all;
 clc;
 close all;
 addpath('../');
-all_data = load('Wood_Euler_1_850.csv');
-pause(3);
+all_data = load('Wood_Euler_5_850.csv');
+pause(1.5);
 xx = 1:size(all_data,1);
 xx = xx';
 
 % Euler Cycle performed
-eul_num = 1;
+eul_num = 5;
 
 % Normalize starting with 1 for all flex data
 % flex_data = max(all_data(:,1:4), 1);
@@ -152,9 +152,14 @@ plot(xx, flex_4(:,1), 'DisplayName','Signal')
 % flex_3(1:299) = 0.961;
 % flex_4(1:460) = 0.951;
 % flex_3(1:199) = 0.951;
-% flex_4(1:195) = 0.961;
+% flex_4(1:195) = 0.951;
 % flex_3(1:170) = 0.951;
-
+% flex_3(1:388) = 0.965;
+% flex_3(5264:5297) = 1.1;
+% flex_1(1:1116) = 0.951;
+% flex_3(1:161) = 0.961;
+% flex_3(271:500) = 0.961;
+flex_3(1:205) = 0.961;
 
 % Plot signal again to verify
 
@@ -183,7 +188,7 @@ range_flex_4 = max(flex_4) - min(flex_4);
 
 threshold_1 = (min(flex_1) + range_flex_1/3);
 threshold_2 = (min(flex_2) + range_flex_2/3);
-threshold_3 = (min(flex_3) + range_flex_3/3);
+threshold_3 = (min(flex_3) + range_flex_3/3.5);
 threshold_4 = (min(flex_4) + range_flex_4/3);
 
 % 1st attempt smoothing square output

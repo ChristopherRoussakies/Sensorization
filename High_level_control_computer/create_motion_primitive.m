@@ -4,9 +4,9 @@ close all;
 
 % Form motion primitive matrix
 
-motion_primitive_1 = load('Mat\motion_primitive_1.mat');
-motion_primitive_2 = load('Mat\motion_primitive_2.mat');
-motion_primitive_3 = load('Mat\motion_primitive_3.mat');
+motion_primitive_1 = load('Wood\motion_primitive_1.mat');
+motion_primitive_2 = load('Wood\motion_primitive_2.mat');
+motion_primitive_3 = load('Wood\motion_primitive_5.mat');
 
 delta_x = [motion_primitive_1.motion_primitive(:,1)'; motion_primitive_2.motion_primitive(:,1)'; motion_primitive_3.motion_primitive(:,1)'];
 
