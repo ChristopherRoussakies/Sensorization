@@ -1,0 +1,20 @@
+clear all;
+clc;
+close all;
+
+% Form motion primitive matrix
+
+motion_primitive_1 = load('Mat\motion_primitive_1.mat');
+motion_primitive_2 = load('Mat\motion_primitive_2.mat');
+motion_primitive_3 = load('Mat\motion_primitive_3.mat');
+
+delta_x = [motion_primitive_1.motion_primitive(:,1)'; motion_primitive_2.motion_primitive(:,1)'; motion_primitive_3.motion_primitive(:,1)'];
+
+delta_y = [motion_primitive_1.motion_primitive(:,2)'; motion_primitive_2.motion_primitive(:,2)'; motion_primitive_3.motion_primitive(:,2)'];
+
+delta_theta = [motion_primitive_1.motion_primitive(:,3)'; motion_primitive_2.motion_primitive(:,3)'; motion_primitive_3.motion_primitive(:,3)'];
+
+delta_theta = deg2rad(delta_theta);
+
+% Concatenate all motion primitive motion data into a 3D matrix.
+motion_primitive_data = cat(3, delta_x, delta_y, delta_theta);
